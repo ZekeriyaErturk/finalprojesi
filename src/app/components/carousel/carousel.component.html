@@ -1,0 +1,14 @@
+<div class="container d-none d-md-block">
+  <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item *ngFor="let post of posts">
+      <div class="view w-100">
+        <img class="d-block w-100" [src]="post.imgUrl" alt="First slide" />
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">{{ post.baslik }}</h3>
+        <p>{{ post.altbaslik }}</p>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>

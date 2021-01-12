@@ -16,6 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PostekleComponent } from './components/postekle/postekle.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PostekleComponent } from './components/postekle/postekle.component';
     LoginComponent,
     RegisterComponent,
     PostekleComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
