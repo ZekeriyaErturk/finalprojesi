@@ -12,9 +12,10 @@ import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LoginComponent],
+  declarations: [AppComponent, NavbarComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

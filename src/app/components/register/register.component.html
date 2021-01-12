@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <mdb-card>
+        <div class="header elegant-color">
+          <div class="row d-flex justify-content-center">
+            <h3 class="white-text mb-3 pt-3 font-weight-bold">Kayıt Ol</h3>
+          </div>
+        </div>
+        <form #frm="ngForm" class="p-4" (submit)="KayitOl()">
+          <mdb-card-body>
+            <div class="md-form">
+              <input
+                #adsoyad
+                name="adsoyad"
+                id="adsoyad"
+                type="text"
+                class="form-control"
+                mdbInput
+                required
+                [(ngModel)]="secUye.adsoyad"
+              />
+              <label for="adsoyad">Ad Soyad</label>
+            </div>
+            <div class="md-form">
+              <input
+                #mail
+                name="mail"
+                id="mail"
+                type="text"
+                class="form-control"
+                mdbInput
+                required
+                [(ngModel)]="uyeMail"
+              />
+              <label for="mail">Email</label>
+            </div>
+            <div class="md-form">
+              <input
+                #parola
+                name="parola"
+                id="parola"
+                type="password"
+                class="form-control"
+                mdbInput
+                required
+                [(ngModel)]="uyeParola"
+              />
+              <label for="parola">Parola</label>
+            </div>
+            <div class="my-4">
+              <input
+                type="submit"
+                color="lighten-3"
+                mdbBtn
+                class="waves-light grey btn-block text-white"
+                mdbWavesEffect
+                value="Kayıt Ol"
+              />
+            </div>
+            <div class="text-center mt-3">
+              <a routerLink="/login" class="info-color-text font-weight-bold"
+                >Üye Girişi</a
+              >
+            </div>
+          </mdb-card-body>
+        </form>
+      </mdb-card>
+    </div>
+  </div>
+</div>
