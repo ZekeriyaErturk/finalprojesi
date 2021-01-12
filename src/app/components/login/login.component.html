@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form>
+        <mdb-card>
+          <div class="header elegant-color">
+            <div class="row d-flex justify-content-center">
+              <h3 class="white-text mb-3 pt-3 font-weight-bold">Üye Girişi</h3>
+            </div>
+          </div>
+          <mdb-card-body>
+            <div class="md-form">
+              <input
+                #mail
+                name="mail"
+                id="mail"
+                type="text"
+                class="form-control"
+                mdbInput
+                required
+              />
+              <label for="mail">Email</label>
+            </div>
+            <div class="md-form">
+              <input
+                #parola
+                name="parola"
+                id="parola"
+                type="password"
+                class="form-control"
+                mdbInput
+                required
+              />
+              <label for="parola">Parola</label>
+            </div>
+            <div class="my-4">
+              <input
+                type="submit"
+                color="lighten-3"
+                mdbBtn
+                class="waves-light grey btn-block text-white"
+                mdbWavesEffect
+                (click)="GirisYap(mail.value, parola.value)"
+                value="Giriş Yap"
+              />
+            </div>
+            <div class="text-center mt-3">
+              <a routerLink="/register" class="info-color-text font-weight-bold"
+                >Kayıt Ol</a
+              >
+            </div>
+          </mdb-card-body>
+        </mdb-card>
+      </form>
+    </div>
+  </div>
+</div>
