@@ -1,6 +1,7 @@
 export class Post {
   key: string;
   baslik: string;
+  altbaslik: string;
   icerik: string;
   likes: number = 0;
   kayTarih: string;

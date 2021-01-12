@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   GirisYap(mail: string, parola: string) {
+    // Giriş yap ve anasayfaya yönlendir.
     this.uyelikServis
       .OturumAc(mail, parola)
       .then((d: any) => {

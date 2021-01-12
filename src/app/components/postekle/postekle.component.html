@@ -1,0 +1,66 @@
+<div class="container my-5">
+  <h2>Post Ekle</h2>
+  <form #frm="ngForm">
+    <div class="md-form">
+      <input
+        #baslik
+        name="baslik"
+        mdbInput
+        type="text"
+        id="baslik"
+        class="form-control"
+        required
+        [(ngModel)]="secPost.baslik"
+      />
+      <label for="">Baslık</label>
+    </div>
+    <div class="md-form">
+      <input
+        #baslik
+        name="baslik"
+        mdbInput
+        type="text"
+        id="baslik"
+        class="form-control"
+        required
+        [(ngModel)]="secPost.altbaslik"
+      />
+      <label for="">Alt Baslık</label>
+    </div>
+    <div class="md-form">
+      <input
+        #imgUrl
+        name="imgUrl"
+        mdbInput
+        type="text"
+        id="baslik"
+        class="form-control"
+        [(ngModel)]="secPost.imgUrl"
+      />
+      <label for="">Thumbnail Url</label>
+    </div>
+    <div class="md-form">
+      <textarea
+        #icerik
+        name="icerik"
+        cols="30"
+        rows="5"
+        class="form-control"
+        required
+        [(ngModel)]="secPost.icerik"
+      ></textarea>
+    </div>
+    <div class="md-form">
+      <input
+        [disabled]="frm.invalid"
+        type="submit"
+        color="lighten-3"
+        mdbBtn
+        class="waves-light grey btn-block text-white"
+        mdbWavesEffect
+        (click)="PostEkle()"
+        value="Gönder"
+      />
+    </div>
+  </form>
+</div>

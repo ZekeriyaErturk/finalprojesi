@@ -2,8 +2,21 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import {
+  AngularFireAuthGuard,
+  redirectUnauthorizedTo,
+} from '@angular/fire/auth-guard';
+import { PostekleComponent } from './components/postekle/postekle.component';
+
+const redirectLogin = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
+  {
+    path: 'postekle',
+    component: PostekleComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLogin },
+  },
   {
     path: 'login',
     component: LoginComponent,
