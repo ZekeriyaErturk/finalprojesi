@@ -22,6 +22,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { YorumekleComponent } from './components/yorumekle/yorumekle.component';
 import { PostlarimComponent } from './components/postlarim/postlarim.component';
+import { PostlarComponent } from './components/postlar/postlar.component';
+import { UyelerComponent } from './components/uyeler/uyeler.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { PostlarimComponent } from './components/postlarim/postlarim.component';
     PostComponent,
     YorumekleComponent,
     PostlarimComponent,
+    PostlarComponent,
+    UyelerComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,17 +15,49 @@
         >
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto" *ngIf="user">
-      <li class="nav-item text-white">
+    <ul class="navbar-nav ml-auto" *ngIf="uid">
+      <li class="nav-item text-white" *ngIf="user?.rol === 'üye'">
         <span class="nav-link disabled">
-          <mdb-icon fas icon="user"></mdb-icon>{{ user.displayName }}
+          <mdb-icon fas icon="user"></mdb-icon>{{ user?.adsoyad }}
         </span>
+      </li>
+      <li class="nav-item dropdown" dropdown *ngIf="user?.rol === 'admin'">
+        <a
+          dropdownToggle
+          mdbWavesEffect
+          type="button"
+          class="nav-link dropdown-toggle waves-light"
+          mdbWavesEffect
+        >
+          <mdb-icon fas icon="gavel" *ngIf="user?.rol === 'admin'"></mdb-icon>
+          {{ user?.adsoyad }}<span class="caret"></span
+        ></a>
+        <div
+          *dropdownMenu
+          class="dropdown-menu dropdown dropdown-primary"
+          role="menu"
+        >
+          <a
+            routerLink="uyeler"
+            class="dropdown-item waves-light"
+            mdbWavesEffect
+            href="#"
+            >Uyeler</a
+          >
+          <a
+            routerLink="postlar"
+            class="dropdown-item waves-light"
+            mdbWavesEffect
+            href="#"
+            >Postlar</a
+          >
+        </div>
       </li>
       <li class="nav-item">
         <a (click)="OturumKapat()" class="nav-link text-danger">Çıkış Yap</a>
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto" *ngIf="!user">
+    <ul class="navbar-nav ml-auto" *ngIf="!uid">
       <li class="nav-item text-white">
         <a class="nav-link" routerLink="/login">Giriş Yap</a>
       </li>
