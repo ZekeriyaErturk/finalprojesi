@@ -35,6 +35,10 @@ export class UyelikService {
     return this.afAuth.createUserWithEmailAndPassword(mail, password);
   }
 
+  UyeleriListele() {
+    return this.uyeRef;
+  }
+
   // uyenin db kaydının yapılması
   UyeEkle(uye: Uye) {
     return this.uyeRef.push(uye);

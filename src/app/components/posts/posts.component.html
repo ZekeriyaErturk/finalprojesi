@@ -27,7 +27,7 @@
           <small class="d-block mt-1">Comments {{ post.yorum }}</small>
         </div>
         <div class="mt-2">
-          <a href="#!" class="text-dark">
+          <a [routerLink]="'post/' + post.key" class="text-dark">
             Daha fazla
             <mdb-icon fas icon="chevron-right" class="pl-1"></mdb-icon>
           </a>

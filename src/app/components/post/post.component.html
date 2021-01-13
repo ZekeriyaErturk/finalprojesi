@@ -1,0 +1,12 @@
+<div class="container my-2">
+  <img [src]="post?.imgUrl" class="img-thumbnail" />
+  <div class="my-2">
+    <div class="d-flex justify-content-between p-2">
+      <h2 class="text-center">{{ post?.baslik }}</h2>
+      <small class="align-self-center">
+        {{ user?.adsoyad }} | {{ post?.duzTarih | date: "h/M/yy hh:mm" }}</small
+      >
+    </div>
+    <p>{{ post?.icerik }}</p>
+  </div>
+</div>

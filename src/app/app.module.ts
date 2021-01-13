@@ -19,6 +19,7 @@ import { PostekleComponent } from './components/postekle/postekle.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { HomeComponent } from './components/home/home.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HomeComponent } from './components/home/home.component';
     CarouselComponent,
     PostsComponent,
     HomeComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
