@@ -20,6 +20,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
+import { YorumekleComponent } from './components/yorumekle/yorumekle.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PostComponent } from './components/post/post.component';
     PostsComponent,
     HomeComponent,
     PostComponent,
+    YorumekleComponent,
   ],
   imports: [
     BrowserModule,

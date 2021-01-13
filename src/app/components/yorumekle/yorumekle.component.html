@@ -1,0 +1,28 @@
+<div class="container p-2">
+  <h4>Yorumlar</h4>
+  <div class="col-md-12 my-2" *ngFor="let comment of comments">
+    <div class="row d-flex justify-content-between">
+      <div class="col-md-10">
+        <p>{{ comment.yorum }}</p>
+      </div>
+      <div class="col-md-2 d-flex justify-content-end">
+        <small>
+          {{ comment.duzTarih | date: "d/M/yy h:mm" }}
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form #frm="ngForm" (submit)="YorumEkle()">
+  <div class="md-form input-group mb-3">
+    <input
+      #yorum
+      name="yorum"
+      type="text"
+      class="form-control"
+      placeholder="Yorum yap"
+      [(ngModel)]="secYorum.yorum"
+    />
+  </div>
+</form>
