@@ -5,7 +5,7 @@ import { Yorum } from '../models/yorum';
 @Injectable({
   providedIn: 'root',
 })
-export class CommentsService {
+export class YorumService {
   // firebase database setup
   private dbComment = '/Yorumlar';
   yorumRef: AngularFireList<Yorum>;

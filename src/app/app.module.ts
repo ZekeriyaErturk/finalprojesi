@@ -17,6 +17,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PostekleComponent } from './components/postekle/postekle.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     RegisterComponent,
     PostekleComponent,
     CarouselComponent,
+    PostsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

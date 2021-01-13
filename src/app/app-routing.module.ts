@@ -7,10 +7,15 @@ import {
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
 import { PostekleComponent } from './components/postekle/postekle.component';
+import { HomeComponent } from './components/home/home.component';
 
 const redirectLogin = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
   {
     path: 'postekle',
     component: PostekleComponent,

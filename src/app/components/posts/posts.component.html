@@ -1,0 +1,38 @@
+<div class="container my-3">
+  <div class="card my-2 p-3" *ngFor="let post of posts">
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="post.imgUrl" class="img-fluid" />
+      </div>
+      <div
+        class="col-md-6 d-flex justify-content-around"
+        id="content-container"
+      >
+        <h2>{{ post.baslik }}</h2>
+        <p>{{ post.altbaslik }}</p>
+        <small class="d-block">{{
+          post.duzTarih | date: "d/M/yy hh:mm"
+        }}</small>
+      </div>
+      <div
+        id="icons-container"
+        class="col-md-2 text-center d-flex justify-content-around"
+      >
+        <div>
+          <mdb-icon fas icon="thumbs-up" size="2x"></mdb-icon>
+          <small class="d-block mt-1">Likes {{ post.likes }}</small>
+        </div>
+        <div>
+          <mdb-icon fas icon="comment-dots" size="2x"></mdb-icon>
+          <small class="d-block mt-1">Comments {{ post.yorum }}</small>
+        </div>
+        <div class="mt-2">
+          <a href="#!" class="text-dark">
+            Daha fazla
+            <mdb-icon fas icon="chevron-right" class="pl-1"></mdb-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

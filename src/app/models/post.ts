@@ -4,6 +4,7 @@ export class Post {
   altbaslik: string;
   icerik: string;
   likes: number = 0;
+  yorum: number = 0;
   kayTarih: string;
   duzTarih: string;
   uid: string;

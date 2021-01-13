@@ -2,3 +2,9 @@
 body {
   background-color: #dddfdf;
 }
+
+@media (max-width: 578px) {
+  #icons-container {
+    flex-direction: row;
+  }
+}
