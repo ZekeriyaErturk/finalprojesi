@@ -1,0 +1,154 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 my-2" *ngFor="let post of postlar">
+      <mdb-card>
+        <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+          <a [routerLink]="'../post/' + post.key">
+            <mdb-card-img
+              [src]="post.imgUrl"
+              alt="Card image cap"
+            ></mdb-card-img>
+            <div class="mask"></div>
+          </a>
+        </div>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4>{{ post.baslik }}</h4>
+          </mdb-card-title>
+
+          <mdb-card-text>
+            <p>
+              {{ post.altbaslik }}
+            </p>
+            <small>{{ post.duzTarih | date: "h/M/yy hh:mm" }}</small>
+          </mdb-card-text>
+        </mdb-card-body>
+
+        <mdb-card-footer class="d-flex justify-content-between">
+          <button
+            (click)="Secpost(post.key); basicModal.show()"
+            type="button"
+            mdbBtn
+            color="warning"
+            size="sm"
+            class="waves-effect"
+          >
+            <mdb-icon fas icon="edit" class="mr-1" aria-hidden="true"></mdb-icon
+            >Düzenle
+          </button>
+          <button
+            (click)="Sil(post.key)"
+            type="button"
+            mdbBtn
+            color="danger"
+            size="sm"
+            class="waves-effect"
+          >
+            <mdb-icon
+              fas
+              icon="trash"
+              class="mr-1"
+              aria-hidden="true"
+            ></mdb-icon
+            >Sil
+          </button>
+        </mdb-card-footer>
+      </mdb-card>
+    </div>
+  </div>
+</div>
+
+<div
+  mdbModal
+  #basicModal="mdbModal"
+  class="modal fade bottom"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myBasicModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-fluid modal-full-height modal-bottom"
+    role="document"
+    *ngIf="secPost"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="basicModal.hide()"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Post Düzenle</h4>
+      </div>
+      <div class="modal-body">
+        <form #frm="ngForm">
+          <div class="md-form">
+            <input
+              #baslik
+              name="baslik"
+              mdbInput
+              type="text"
+              id="baslik"
+              class="form-control"
+              required
+              [(ngModel)]="secPost.baslik"
+            />
+            <label for="">Baslık</label>
+          </div>
+          <div class="md-form">
+            <input
+              #baslik
+              name="baslik"
+              mdbInput
+              type="text"
+              id="baslik"
+              class="form-control"
+              required
+              [(ngModel)]="secPost.altbaslik"
+            />
+            <label for="">Alt Baslık</label>
+          </div>
+          <div class="md-form">
+            <input
+              #imgUrl
+              name="imgUrl"
+              mdbInput
+              type="text"
+              id="baslik"
+              class="form-control"
+              [(ngModel)]="secPost.imgUrl"
+            />
+            <label for="">Thumbnail Url</label>
+          </div>
+          <div class="md-form">
+            <textarea
+              #icerik
+              name="icerik"
+              cols="30"
+              rows="5"
+              class="form-control"
+              required
+              [(ngModel)]="secPost.icerik"
+            ></textarea>
+          </div>
+          <div class="md-form">
+            <input
+              [disabled]="frm.invalid"
+              type="submit"
+              color="lighten-3"
+              mdbBtn
+              class="waves-light grey btn-block text-white"
+              mdbWavesEffect
+              (click)="Duzenle(); basicModal.hide()"
+              value="Gönder"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

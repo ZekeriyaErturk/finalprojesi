@@ -9,6 +9,7 @@ import {
 import { PostekleComponent } from './components/postekle/postekle.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
+import { PostlarimComponent } from './components/postlarim/postlarim.component';
 
 const redirectLogin = () => redirectUnauthorizedTo(['login']);
 
@@ -24,6 +25,12 @@ const routes: Routes = [
   {
     path: 'postekle',
     component: PostekleComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLogin },
+  },
+  {
+    path: 'postlarim',
+    component: PostlarimComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectLogin },
   },

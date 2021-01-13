@@ -21,6 +21,7 @@ import { PostsComponent } from './components/posts/posts.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { YorumekleComponent } from './components/yorumekle/yorumekle.component';
+import { PostlarimComponent } from './components/postlarim/postlarim.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { YorumekleComponent } from './components/yorumekle/yorumekle.component';
     HomeComponent,
     PostComponent,
     YorumekleComponent,
+    PostlarimComponent,
   ],
   imports: [
     BrowserModule,
