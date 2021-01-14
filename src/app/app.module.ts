@@ -24,6 +24,7 @@ import { YorumekleComponent } from './components/yorumekle/yorumekle.component';
 import { PostlarimComponent } from './components/postlarim/postlarim.component';
 import { PostlarComponent } from './components/postlar/postlar.component';
 import { UyelerComponent } from './components/uyeler/uyeler.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UyelerComponent } from './components/uyeler/uyeler.component';
     PostlarimComponent,
     PostlarComponent,
     UyelerComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

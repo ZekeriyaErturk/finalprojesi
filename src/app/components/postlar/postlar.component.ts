@@ -12,6 +12,7 @@ import { UyelikService } from 'src/app/services/uyelik.service';
 export class PostlarComponent implements OnInit {
   posts: Post[];
   secPost: Post;
+  arama: string;
   constructor(
     private postServis: PostService,
     private uyelikServis: UyelikService

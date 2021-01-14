@@ -11,6 +11,7 @@ import { UyelikService } from 'src/app/services/uyelik.service';
 export class UyelerComponent implements OnInit {
   uyeler: Uye[];
   secUye: Uye;
+  arama: string;
   constructor(private uyelikServis: UyelikService) {
     uyelikServis
       .UyeleriListele()
