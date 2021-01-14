@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Post } from 'src/app/models/post';
 import { Uye } from 'src/app/models/uye';
@@ -15,9 +15,11 @@ export class PostComponent implements OnInit {
   key: string;
   post: Post;
   user: Uye;
+  loggedUser: Uye;
   constructor(
     private uyeServis: UyelikService,
     private route: ActivatedRoute,
+    private router: Router,
     private postServis: PostService
   ) {
     route.params.subscribe((d) => {
@@ -29,6 +31,7 @@ export class PostComponent implements OnInit {
       .snapshotChanges()
       .subscribe((d) => {
         this.post = d.payload.val() as Post;
+        this.post.key = d.key;
         // post gönderen üye bilgileri
         uyeServis
           .UyeleriListele()
@@ -42,11 +45,18 @@ export class PostComponent implements OnInit {
             this.user = d.filter((u) => u.uid === this.post.uid)[0];
           });
       });
+
+    uyeServis.user.subscribe((p) => (this.loggedUser = p));
   }
 
   ngOnInit(): void {}
 
-  Like(key: string) {
-    console.log(key);
+  Like(post: Post) {
+    if (!this.loggedUser) {
+      this.router.navigate(['/login']);
+    } else {
+      post.likes += 1;
+      this.postServis.PostDüzenle(post);
+    }
   }
 }
