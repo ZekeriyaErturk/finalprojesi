@@ -3,9 +3,15 @@
   <div class="my-2">
     <div class="d-flex justify-content-between p-2">
       <h2 class="text-center">{{ post?.baslik }}</h2>
-      <small class="align-self-center">
-        {{ user?.adsoyad }} | {{ post?.duzTarih | date: "h/M/yy hh:mm" }}</small
-      >
+      <div class="d-flex">
+        <small class="align-self-center mr-3"> {{ user?.adsoyad }}</small>
+        <small class="align-self-center mr-3">
+          {{ post?.duzTarih | date: "h/M/yy hh:mm" }}</small
+        >
+        <small class="align-self-center" (click)="Like(post.key)">
+          Beğen <mdb-icon fas icon="thumbs-up"></mdb-icon>
+        </small>
+      </div>
     </div>
     <p>{{ post?.icerik }}</p>
   </div>

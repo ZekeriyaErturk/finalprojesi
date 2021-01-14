@@ -45,4 +45,8 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  Like(key: string) {
+    console.log(key);
+  }
 }

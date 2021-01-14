@@ -9,4 +9,5 @@ export class Post {
   duzTarih: string;
   uid: string;
   imgUrl: string;
+  uye?: string;
 }
