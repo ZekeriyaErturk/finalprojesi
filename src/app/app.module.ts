@@ -25,6 +25,7 @@ import { PostlarimComponent } from './components/postlarim/postlarim.component';
 import { PostlarComponent } from './components/postlar/postlar.component';
 import { UyelerComponent } from './components/uyeler/uyeler.component';
 import { FilterPipe } from './filter.pipe';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FilterPipe } from './filter.pipe';
     PostlarComponent,
     UyelerComponent,
     FilterPipe,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

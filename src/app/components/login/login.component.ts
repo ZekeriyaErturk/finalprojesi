@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UyelikService } from 'src/app/services/uyelik.service';
 import { Router } from '@angular/router';
+import { Alert } from 'src/app/models/alert';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  alert: Alert = new Alert();
   constructor(private uyelikServis: UyelikService, private router: Router) {}
 
   ngOnInit(): void {}
@@ -21,7 +23,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/']);
       })
       .catch((err: any) => {
-        console.log(err);
+        this.alert.mesaj = 'Bir Hata Oluştu';
+        this.alert.type = 'danger';
       });
   }
 }

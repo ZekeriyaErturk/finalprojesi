@@ -19,16 +19,18 @@ export class PostlarimComponent implements OnInit {
   ) {
     this.uyeServis.user.subscribe((d) => {
       this.user = d;
-      this.postServis
-        .PostListeleByUID(this.user.uid)
-        .snapshotChanges()
-        .subscribe((d) => {
-          this.postlar = [];
-          d.forEach((post) => {
-            const p = { ...post.payload.toJSON(), key: post.key };
-            this.postlar.push(p as Post);
+      if (this.user) {
+        this.postServis
+          .PostListeleByUID(this.user.uid)
+          .snapshotChanges()
+          .subscribe((d) => {
+            this.postlar = [];
+            d.forEach((post) => {
+              const p = { ...post.payload.toJSON(), key: post.key };
+              this.postlar.push(p as Post);
+            });
           });
-        });
+      }
     });
   }
 

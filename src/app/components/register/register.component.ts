@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Utils } from 'angular-bootstrap-md/lib/free/utils';
+import { Alert } from 'src/app/models/alert';
 import { Uye } from 'src/app/models/uye';
 import { UyelikService } from 'src/app/services/uyelik.service';
 
@@ -13,6 +14,7 @@ export class RegisterComponent implements OnInit {
   uyeMail: string;
   uyeParola: string;
   secUye: Uye = new Uye();
+  alert: Alert = new Alert();
   constructor(private router: Router, private uyelikServis: UyelikService) {}
 
   ngOnInit(): void {}
@@ -34,7 +36,10 @@ export class RegisterComponent implements OnInit {
         this.secUye.kayTarih = tarih.toString();
         this.UyeEkle();
       })
-      .catch((err) => {});
+      .catch((err) => {
+        this.alert.mesaj = 'Bir Hata Oluştu';
+        this.alert.type = 'danger';
+      });
   }
 
   UyeEkle() {
