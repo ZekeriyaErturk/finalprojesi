@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   KayitOl() {
+    const tarih = new Date().getTime();
     // mail ve şifre ile uye ol
     this.uyelikServis
       .UyeOl(this.uyeMail, this.uyeParola)
@@ -30,6 +31,7 @@ export class RegisterComponent implements OnInit {
           });
         this.secUye.uid = d.user.uid;
         this.secUye.mail = d.user.email;
+        this.secUye.kayTarih = tarih.toString();
         this.UyeEkle();
       })
       .catch((err) => {});

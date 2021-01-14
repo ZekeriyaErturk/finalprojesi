@@ -1,1 +1,156 @@
-<p>uyeler works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr class="text-center">
+            <th>Adı Soyadı</th>
+            <th>Mail</th>
+            <th>Kayıt Tarihi</th>
+            <th>Rol</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let uye of uyeler" class="text-center">
+            <td>{{ uye.adsoyad }}</td>
+            <td>{{ uye.mail }}</td>
+            <td>{{ uye.kayTarih | date: "d/M/yy hh:mm" }}</td>
+            <td>{{ uye.rol }}</td>
+            <td>
+              <button
+                type="button"
+                mdbBtn
+                color="ligthen-3"
+                size="sm"
+                class="waves-effect grey"
+                (click)="this.secUye = uye; frame.show()"
+              >
+                <mdb-icon
+                  fas
+                  icon="edit"
+                  class="mr-1"
+                  aria-hidden="true"
+                ></mdb-icon
+                >Düzenle
+              </button>
+            </td>
+
+            <td>
+              <button
+                (click)="Sil(uye)"
+                type="button"
+                mdbBtn
+                color="ligthen-3"
+                size="sm"
+                class="waves-effect grey"
+              >
+                <mdb-icon
+                  fas
+                  icon="trash"
+                  class="mr-1"
+                  aria-hidden="true"
+                ></mdb-icon>
+                Sil
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div
+  mdbModal
+  #frame="mdbModal"
+  class="modal fade"
+  id="frameModalTop"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Kullanıcı Düzenle</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="frame.hide()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form #frm="ngForm" *ngIf="secUye">
+          <div class="md-form">
+            <input
+              mdbInput
+              type="text"
+              id="ad"
+              name="adsoyad"
+              class="form-control"
+              [(ngModel)]="secUye.adsoyad"
+            />
+            <label for="ad" class="">Kullanıcı Adı</label>
+          </div>
+          <div class="md-form">
+            <input
+              mdbInput
+              type="text"
+              id="mail"
+              name="mail"
+              class="form-control"
+              [(ngModel)]="secUye.mail"
+            />
+            <label for="mail">Mail</label>
+          </div>
+          <div class="text-center my-3">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                type="radio"
+                class="custom-control-input"
+                id="mod"
+                name="rol"
+                value="mod"
+                mdbInput
+                [(ngModel)]="secUye.rol"
+              />
+              <label class="custom-control-label" for="mod">Moderator</label>
+            </div>
+
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                type="radio"
+                class="custom-control-input"
+                id="uye"
+                name="rol"
+                value="üye"
+                mdbInput
+                [(ngModel)]="secUye.rol"
+              />
+              <label class="custom-control-label" for="uye">Uye</label>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              type="button"
+              mdbBtn
+              color="ligthen-3"
+              size="sm"
+              class="waves-effect grey btn-block"
+              (click)="Duzenle(); frame.hide()"
+            >
+              Gönder
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

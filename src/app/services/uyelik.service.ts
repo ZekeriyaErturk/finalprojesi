@@ -30,11 +30,17 @@ export class UyelikService {
     return this.afAuth.signInWithEmailAndPassword(mail, password);
   }
 
+  // logout
+  OturumKapat() {
+    return this.afAuth.signOut();
+  }
+
   // mail ve şifre ile kullanıcı kayıt
   UyeOl(mail: string, password: string) {
     return this.afAuth.createUserWithEmailAndPassword(mail, password);
   }
 
+  // uyeleri getir
   UyeleriListele() {
     return this.uyeRef;
   }
@@ -44,8 +50,13 @@ export class UyelikService {
     return this.uyeRef.push(uye);
   }
 
-  // logout
-  OturumKapat() {
-    return this.afAuth.signOut();
+  // uye düzenle
+  UyeDuzenle(uye: Uye) {
+    return this.uyeRef.update(uye.key, uye);
+  }
+
+  // uye sil
+  UyeSil(uye: Uye) {
+    return this.uyeRef.remove(uye.key);
   }
 }

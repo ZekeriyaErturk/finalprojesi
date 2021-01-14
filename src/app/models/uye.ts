@@ -3,5 +3,6 @@ export class Uye {
   adsoyad: string;
   mail: string;
   uid: string;
+  kayTarih: string;
   rol: string = 'üye';
 }
