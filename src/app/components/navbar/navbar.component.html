@@ -53,6 +53,31 @@
           >
         </div>
       </li>
+      <li class="nav-item dropdown" dropdown *ngIf="user?.rol === 'mod'">
+        <a
+          dropdownToggle
+          mdbWavesEffect
+          type="button"
+          class="nav-link dropdown-toggle waves-light"
+          mdbWavesEffect
+        >
+          <mdb-icon fas icon="user-check"></mdb-icon>
+          {{ user?.adsoyad }}<span class="caret"></span
+        ></a>
+        <div
+          *dropdownMenu
+          class="dropdown-menu dropdown dropdown-primary"
+          role="menu"
+        >
+          <a
+            routerLink="postlar"
+            class="dropdown-item waves-light"
+            mdbWavesEffect
+            href="#"
+            >Postlar</a
+          >
+        </div>
+      </li>
       <li class="nav-item">
         <a (click)="OturumKapat()" class="nav-link text-danger">Çıkış Yap</a>
       </li>
