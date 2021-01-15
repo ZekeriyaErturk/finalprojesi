@@ -1,3 +1,3 @@
-# İnternet Programcılığı I Final Projesi Haber/Forum Portal Uygulaması
+# İnternet Programcılığı Final Projesi Haber/Forum Portal Uygulaması
 
-Projenin çalışır hali [adresindedir](https://zekeriyaerturk.github.io/finalprojesi/)
+Proje [Linki](https://zekeriyaerturk.github.io/finalprojesi/)
